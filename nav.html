@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة عقارات</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* إخفاء التمرير */
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(150, 143, 117, 0.8); /* لون الخلفية مع الشفافية */
+            transition: opacity 1s ease; /* تأثير الشفافية */
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            height: 100px; /* يمكنك تعديل الحجم حسب الحاجة */
+            margin-right: 10px;
+        }
+
+        .separator {
+            width: 1px;
+            height: 90px; /* يمكنك تعديل الطول حسب الحاجة */
+            background-color: #0A284E;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .description {
+            margin: 0;
+            font-size:22px;
+            line-height: 1.5;
+            color: #0A284E;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page">
+        <div class="content">
+            <img src="images/02ebf97b-0a67-4e88-a40d-779d97621704.webp" alt="شعار" class="logo">
+            <div class="separator"></div>
+            <p class="description">              
+                نحن نقدم لكم مجموعة واسعة من <br>الخيارات العقارية لتلبية جميع احتياجاتكم.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector('.page').style.opacity = '0'; // جعل الصفحة شفافة
+
+                setTimeout(function() {
+                    window.location.href = "file:///C:/Users/WIN10/Desktop/test%20-%20Copy/index.html"; // استبدل بالرابط الذي تريد الانتقال إليه
+                }, 1000); // تأخير يطابق مدة التأثير في CSS (1 ثانية)
+            }, 5000); // 5000 مللي ثانية = 5 ثوانٍ
+        });
+    </script>
+</body>
+</html>

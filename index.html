@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="AYSR" data-ar=" ايسر" >AYSR</title>
+    <meta name="theme-color" content="#003366">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: "Cairo", sans-serif;
+
+            overflow: hidden; /* إخفاء التمرير */
+            position: relative;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(35, 82,108, 0.5); /* تحويل اللون #968F75 إلى صيغة rgba مع شفافية بنسبة 0.8 */
+            transition: opacity 1s ease; /* تأثير الشفافية */
+            z-index: 2; /* تأكد من أن الصفحة فوق iframe */
+        }
+
+        .page.hidden {
+            opacity: 0; /* جعل الصفحة شفافة */
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            height: 90px; /* يمكنك تعديل الحجم حسب الحاجة */
+            margin-right: 10px;
+        }
+
+        .separator {
+            width: 1px;
+            height: 90px; /* يمكنك تعديل الطول حسب الحاجة */
+            background-color: #fff;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .description {
+            margin: 0;
+            font-size:22px;
+            line-height: 1.5;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+           
+        .logo {
+            height: 70px; /* يمكنك تعديل الحجم حسب الحاجة */
+            margin-right: 10px;
+        }
+
+        .separator {
+            width: 1px;
+            height: 70px; /* يمكنك تعديل الطول حسب الحاجة */
+            background-color: #fff;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .description {
+            margin: 0;
+            font-size:18px;
+            line-height: 1.5;
+            color: #fff;
+        }
+      
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* إزالة الحدود حول iframe */
+            z-index: 1; /* تأكد من أن iframe خلف الصفحة */
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page">
+        <div class="content">
+            <img src="images/Untitled design-2.png" alt="شعار" class="logo">
+            <div class="separator"></div>
+            <p class="description">              
+                نحن نقدم لكم مجموعة واسعة من <br>الخيارات العقارية لتلبية جميع احتياجاتكم.</p>
+        </div>
+    </div>
+
+    <iframe src="test.html"></iframe> <!-- استبدل بالرابط الذي تريد عرضه خلف الصفحة -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector('.page').classList.add('hidden'); // إضافة فئة التلاشي إلى العنصر
+
+                setTimeout(function() {
+                    window.location.href ="test.html"; // الانتقال إلى الصفحة التالية
+                },); // تأخير يطابق مدة التأثير في CSS (1 ثانية)
+            }, 3000); // 5000 مللي ثانية = 5 ثوانٍ
+        });
+    </script>
+</body>
+</html>
